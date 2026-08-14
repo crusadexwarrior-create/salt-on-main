@@ -5,7 +5,6 @@ import { TrustIntro } from "@/components/salt/TrustIntro";
 import { Services } from "@/components/salt/Services";
 import { BookingSection } from "@/components/salt/BookingSection";
 import { About } from "@/components/salt/About";
-import { Reviews } from "@/components/salt/Reviews";
 import { LocationHours } from "@/components/salt/LocationHours";
 import { FAQ } from "@/components/salt/FAQ";
 import { Footer } from "@/components/salt/Footer";
@@ -51,7 +50,6 @@ function Index() {
         <Services />
         <BookingSection />
         <About />
-        <Reviews />
         <LocationHours />
         <FAQ />
       </main>
