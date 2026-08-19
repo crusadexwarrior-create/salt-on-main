@@ -8,13 +8,19 @@ import {
 } from "framer-motion";
 import heroImg from "@/assets/hero.jpg";
 import { BookNowButton } from "./BookNowButton";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const isMobile = useIsMobile();
+  // Disable scroll-linked parallax on touch/mobile (where async scrolling makes
+  // the spring jitter) and for reduced-motion. Desktop keeps a gentle, softened
+  // parallax with a shorter travel and calmer spring to avoid overshoot.
+  const disableParallax = reduce || isMobile;
   const imgWrapRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
-  const rawY = useTransform(scrollY, [0, 800], [0, reduce ? 0 : -60]);
-  const y = useSpring(rawY, { stiffness: 80, damping: 20, mass: 0.4 });
+  const rawY = useTransform(scrollY, [0, 800], [0, disableParallax ? 0 : -40]);
+  const y = useSpring(rawY, { stiffness: 60, damping: 26, mass: 0.4 });
 
   useEffect(() => {
     // no-op; hook kept for future
@@ -67,20 +73,20 @@ export function Hero() {
             variants={item}
             className="mt-6 font-display text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl"
           >
-            Relax, Restore,
+            Breathe Deeper.
             <br />
-            <span className="italic text-accent">and Breathe Better</span>
+            Feel Lighter.
             <br />
-            at Salt on Main.
+            <span className="italic text-accent">Reset on Main Street.</span>
           </motion.h1>
           <motion.p
             variants={item}
             className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
-            A calming wellness center in Historic Laurel offering salt therapy,
-            red light therapy, infrared salty sauna, massage, signature
-            experiences, and private events.
-
+            Step into a calming wellness experience in Historic Laurel featuring
+            salt therapy, massage, infrared sauna, red light therapy, and
+            restorative experiences designed to help you slow down, reset, and
+            make space for yourself.
           </motion.p>
 
           <motion.div

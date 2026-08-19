@@ -2,12 +2,12 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Reveal, Stagger, StaggerItem } from "./Reveal";
 
 const hours = [
-  ["Monday", "Closed"],
-  ["Tuesday", "11 AM – 7 PM"],
-  ["Wednesday", "11 AM – 6 PM"],
-  ["Thursday", "4 PM – 7 PM"],
-  ["Friday", "11 AM – 6 PM"],
-  ["Saturday", "9 AM – 2 PM"],
+  ["Monday", "Closed — Appointments Only"],
+  ["Tuesday", "10:00 AM – 6:00 PM"],
+  ["Wednesday", "10:00 AM – 6:00 PM"],
+  ["Thursday", "10:00 AM – 6:00 PM"],
+  ["Friday", "10:00 AM – 6:00 PM"],
+  ["Saturday", "10:00 AM – 4:00 PM"],
   ["Sunday", "Closed"],
 ];
 

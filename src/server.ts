@@ -44,8 +44,22 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+// Canonical host: 301 www.saltonmain.media -> saltonmain.media, preserving
+// path + query. Keeps a single canonical URL for SEO and avoids duplicate
+// content across the two custom domains.
+function canonicalHostRedirect(request: Request): Response | undefined {
+  const url = new URL(request.url);
+  if (url.hostname === "www.saltonmain.media") {
+    url.hostname = "saltonmain.media";
+    return Response.redirect(url.toString(), 301);
+  }
+  return undefined;
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const redirect = canonicalHostRedirect(request);
+    if (redirect) return redirect;
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);

@@ -29,7 +29,7 @@ export function Reveal({
       opacity: 1,
       y: 0,
       transition: {
-        duration: reduce ? 0 : 0.7,
+        duration: reduce ? 0 : 0.85,
         ease: [0.22, 1, 0.36, 1] as const,
         delay: reduce ? 0 : delay,
       },
@@ -110,7 +110,7 @@ export function StaggerItem({
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: reduce ? 0 : 0.7, ease: [0.22, 1, 0.36, 1] as const },
+      transition: { duration: reduce ? 0 : 0.85, ease: [0.22, 1, 0.36, 1] as const },
     },
   };
   return (
