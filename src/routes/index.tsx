@@ -3,6 +3,7 @@ import { Header } from "@/components/salt/Header";
 import { Hero } from "@/components/salt/Hero";
 import { TrustIntro } from "@/components/salt/TrustIntro";
 import { Services } from "@/components/salt/Services";
+import { ResetCadence } from "@/components/salt/ResetCadence";
 import { BookingSection } from "@/components/salt/BookingSection";
 import { About } from "@/components/salt/About";
 import { LocationHours } from "@/components/salt/LocationHours";
@@ -48,6 +49,7 @@ function Index() {
         <Hero />
         <TrustIntro />
         <Services />
+        <ResetCadence />
         <BookingSection />
         <About />
         <LocationHours />
