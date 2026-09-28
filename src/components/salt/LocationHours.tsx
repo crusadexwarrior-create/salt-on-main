@@ -3,12 +3,12 @@ import { Reveal, Stagger, StaggerItem } from "./Reveal";
 
 const hours = [
   ["Monday", "Closed — Appointments Only"],
-  ["Tuesday", "10:00 AM – 6:00 PM"],
-  ["Wednesday", "10:00 AM – 6:00 PM"],
-  ["Thursday", "10:00 AM – 6:00 PM"],
+  ["Tuesday", "Closed"],
+  ["Wednesday", "10:00 AM – 12:00 PM"],
+  ["Thursday", "Closed — Appointments Only"],
   ["Friday", "10:00 AM – 6:00 PM"],
-  ["Saturday", "10:00 AM – 4:00 PM"],
-  ["Sunday", "Closed"],
+  ["Saturday", "10:00 AM – 2:00 PM"],
+  ["Sunday", "11:00 AM – 4:00 PM"],
 ];
 
 export function LocationHours() {
